@@ -32,7 +32,7 @@ Detect pedestrians and cyclists from a live camera or a video file.
 **Usage**:
 
 ```bash
-python inference.py [--source {camera,video}] [--input <path>] [--output <path>] [--model <weights>.pt] [--conf <0.0–1.0>] 
+python inference.py [--source {camera,video}] [--input <path>] [--output <path>] [--model <weights>.pt]
 ```
 
 * `--source`: `camera` (default) or `video`
