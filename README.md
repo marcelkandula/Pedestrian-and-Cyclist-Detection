@@ -57,7 +57,7 @@ Validate yolo model using videos from /test_vids
 python validate.py --weights <YOLO_wegihts> --img-dir <frames_directory> --label-dir <label_directory> --save-dir <output_results>
 ```
 
-### 2. `train.py`
+### 3. `train.py`
 
 Train yolo model by modifying dataset.yaml file
 
