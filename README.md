@@ -1,6 +1,6 @@
 # Pedestrian and Cyclist Detection
 
-A simple set of Python scripts for real-time pedestrian and cyclist detection using YOLOv11n, and converting image frames into a video.
+A simple set of Python scripts for real-time pedestrian and cyclist detection, validation and traing using YOLOv11n and CityScapes dataset.
 
 
 ## Installation
@@ -25,37 +25,41 @@ A simple set of Python scripts for real-time pedestrian and cyclist detection us
 
 ## Scripts
 
-### 1. `inference.py`
+### 1. `test.py`
 
 Detect pedestrians and cyclists from a live camera or a video file.
 
 **Usage**:
 
 ```bash
-python inference.py [--source {camera,video}] [--input <path>] [--output <path>] [--model <weights>.pt] [--conf <0.0–1.0>] 
+python test.py [--source {camera,video}] [--input <path>] [--output <path>] [--model <weights>.pt] [--conf <0.0–1.0>] 
 ```
 
 * `--source`: `camera` (default) or `video`
 * `--input`: Path to the input video file (required if `--source` is `video`)
 * `--output`: Path to save the annotated output video
-* `--model`: Path to YOLOv11 nano weights (default: `yolov11n.pt`)
+* `--weights`: Path to YOLOv11 nano weights (default: `yolov11n.pt`)
 * `--conf`: Confidence threshold (default: `0.5`)
 
 **Example**:
 
 ```bash
-python inference.py --source video --input input/test.mp4 --output output/out.mp4
+python test.py --source video --input input/test.mp4 --output output/out.mp4
 ```
 
-### 2. `video_from_frames.py`
+### 2. `validate.py`
 
-Create an MP4 video from a directory of image frames.
+Validate yolo model using videos from /test_vids
 
 **Usage**:
 
 ```bash
-python video_from_frames.py --input <frames_dir> --output <output_video>.mp4
+python validate.py --weights <YOLO_wegihts> --img-dir <frames_directory> --label-dir <label_directory> --save-dir <output_results>
 ```
+
+### 2. `train.py`
+
+Train yolo model by modifying dataset.yaml file
 
 ## License
 

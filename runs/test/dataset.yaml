@@ -1,0 +1,8 @@
+names:
+- pedestrian
+- cyclist
+nc: 2
+path: test_vids
+test: images
+train: images
+val: images
